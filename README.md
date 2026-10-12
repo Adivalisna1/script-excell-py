@@ -82,3 +82,24 @@ python filter_kode_satker.py data_master.xlsx
 python filter_kode_satker.py data_master.xlsx -o Daftar_Unik.xlsx
 ```
 *(Secara bawaan/default, hasil akan disimpan sebagai `Daftar_Kode_Satker.xlsx`)*
+
+---
+
+### 5. Memisahkan Data Satker Berdasarkan Eselon 1 (`pisah_satker_per_eselon.py`)
+Script ini berfungsi untuk memilah master data Satker menjadi file-file Excel terpisah berdasarkan **Unit Pembina Eselon 1** masing-masing dengan penataan tabel profesional (navy header, auto-fit lebar kolom, zebra rows).
+
+**Cara Pakai:**
+```bash
+python pisah_satker_per_eselon.py <nama_file_excel_master>
+```
+*Contoh:*
+```bash
+python pisah_satker_per_eselon.py "kkpk satker.xlsx"
+```
+**Opsi Tambahan:**
+Bisa menambahkan `-i` untuk file input dan `-o` untuk folder tujuan penyimpanan file hasil:
+```bash
+python pisah_satker_per_eselon.py -i "kkpk satker.xlsx" -o "output_per_eselon1"
+```
+*(Secara bawaan/default, hasil akan disimpan otomatis ke dalam folder `output_per_eselon1`)*
+
