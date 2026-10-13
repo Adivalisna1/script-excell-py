@@ -85,21 +85,35 @@ python filter_kode_satker.py data_master.xlsx -o Daftar_Unik.xlsx
 
 ---
 
-### 5. Memisahkan Data Satker Berdasarkan Eselon 1 (`pisah_satker_per_eselon.py`)
-Script ini berfungsi untuk memilah master data Satker menjadi file-file Excel terpisah berdasarkan **Unit Pembina Eselon 1** masing-masing dengan penataan tabel profesional (navy header, auto-fit lebar kolom, zebra rows).
+### 5. Memilah Data Satker per Eselon 1 (`pisah_satker_per_eselon.py`)
+Script ini berfungsi untuk memilah data satker ke dalam folder masing-masing Unit Eselon 1 pembinanya (Setjen, Dikti, Vokasi, Saintek, Itjen).
 
 **Cara Pakai:**
 ```bash
-python pisah_satker_per_eselon.py <nama_file_excel_master>
+python pisah_satker_per_eselon.py <nama_file_excel_mentah>
+```
+
+---
+
+### 6. Memilah Referensi Akun per Tipe Akun (`pisah_referensi_akun.py`)
+Script ini berfungsi untuk memilah master file **Referensi Akun** (Bagan Akun Standar) menjadi 5 file Excel terpisah berdasarkan **Tipe Akun** (`A` = Aset, `L` = Liabilitas, `O` = Ekuitas, `R` = Pendapatan, `E` = Beban/Belanja).
+
+**Fitur:**
+* Penomoran urut otomatis diulang 1 sampai akhir per file.
+* Lebar kolom nama akun otomatis disesuaikan (*auto-fit width*).
+* Header tabel rapi dan profesional (*navy blue*).
+
+**Cara Pakai:**
+```bash
+python pisah_referensi_akun.py <nama_file_referensi_akun.xlsx>
 ```
 *Contoh:*
 ```bash
-python pisah_satker_per_eselon.py "kkpk satker.xlsx"
+python pisah_referensi_akun.py "Referensi Akun_2026-10-06.xlsx"
 ```
 **Opsi Tambahan:**
-Bisa menambahkan `-i` untuk file input dan `-o` untuk folder tujuan penyimpanan file hasil:
 ```bash
-python pisah_satker_per_eselon.py -i "kkpk satker.xlsx" -o "output_per_eselon1"
+python pisah_referensi_akun.py data_akun.xlsx -o folder_hasil_akun
 ```
-*(Secara bawaan/default, hasil akan disimpan otomatis ke dalam folder `output_per_eselon1`)*
+*(Secara bawaan/default, hasil akan disimpan otomatis di dalam folder `output_per_tipe_akun`)*
 

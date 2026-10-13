@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Output Excel
+*.xlsx
+*.xls
+output_*/
+hasil_*/
+Hasil_*/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
