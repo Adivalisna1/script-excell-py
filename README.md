@@ -117,3 +117,31 @@ python pisah_referensi_akun.py data_akun.xlsx -o folder_hasil_akun
 ```
 *(Secara bawaan/default, hasil akan disimpan otomatis di dalam folder `output_per_tipe_akun`)*
 
+---
+
+### 7. Membandingkan Nomor Rekening antar 2 File Excel (`cek_norek.py`)
+Script ini berfungsi untuk membandingkan data nomor rekening antara 2 file Excel dengan format tabel berbeda (posisi header beda, nama kolom beda, dan terdapat baris judul grup satker).
+
+**Fitur:**
+* **Pencocokan Cerdas**: Kunci pencarian utama menggunakan Nomor Rekening (mengabaikan spasi, tanda strip, titik, dan awalan nol).
+* **Perbandingan Multikolom**:
+  - Kode Satker & Nama Satker (otomatis diekstrak dari baris judul satker jika tidak ada kolom khusus).
+  - Nama Rekening.
+  - Jenis Rekening (BPG, BPN, BPP, RPL, RKK, dll.).
+* **Keterangan & Highlight Warna**:
+  - `Sesuai`: Menampilkan No Satker & Nama Satker (Hijau).
+  - `Beda`: Menampilkan rincian data apa saja yang berbeda (Oranye).
+  - `Tidak Ada`: Rekening tidak ditemukan di file pembanding (Merah).
+  - `No Rek Kosong`: Menandai baris judul satker / baris tanpa rekening (Kuning/Abu-abu).
+* **Pilihan Rentang Baris**: Bisa memilih baris tertentu (contoh: `422-1058` atau `3-30, 50, 100-120`).
+* **Loop Interaktif**: Setelah selesai, terdapat menu pilihan untuk cek baris lain (instan tanpa memuat ulang file), ganti file, atau keluar.
+
+**Cara Pakai:**
+```bash
+python cek_norek.py
+```
+*Atau dengan argumen langsung:*
+```bash
+python cek_norek.py file_utama.xlsx file_pembanding.xlsx --baris "422-1058"
+```
+*(Secara bawaan, hasil akan disimpan otomatis sebagai `hasil_perbandingan.xlsx`)*

@@ -6,6 +6,8 @@ __pycache__/
 # Data & Output Excel
 *.xlsx
 *.xls
+*.xlsm
+*.csv
 output_*/
 hasil_*/
 Hasil_*/
@@ -13,5 +15,7 @@ Hasil_*/
 # OS / Editor
 .DS_Store
 Thumbs.db
+Desktop.ini
 .vscode/
 .idea/
+*.log
